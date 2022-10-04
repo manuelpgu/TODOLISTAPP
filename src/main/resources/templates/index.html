@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>MySQL Todo Sample</title>
+</head>
+
+<body>
+  <h1>ToDo List</h1>
+	<table>
+  		<tr th:each="item : ${items}">
+            <td><span th:text="${item.title}"> Title </span></td>
+            <td><span th:text="${item.description}"> Descripction </span></td>
+         	<td>
+         		<a th:href="|@{/delete_item/{id}(id=${item.id})}|" class="btn btn-danger">Delete</a>
+         	</td>
+        </tr>
+    </table>
+</body>
+
+</html>
